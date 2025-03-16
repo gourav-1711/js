@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    
+    let firstNotRepeat = (word) => {
+        for (let i = 0; i < word.length; i++) {
+            let char = word[i];
+            if (word.indexOf(char) == i && word.indexOf(char, i + 1) == -1) {
+                return char;
+            }
+        }
+        return "_";
+    }
+
+    console.log(firstNotRepeat("racecar"))
+
+
+
+</script>
+
+</html>

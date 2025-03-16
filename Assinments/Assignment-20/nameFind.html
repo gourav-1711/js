@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    let array = ["cube", "ramesh", "suresh", "faruk", "hari", "kidhan", "sagar", "mayank", "gaurav", 'Akshay', 'Mickey', 'Eshan', 'Ethan','umbrella' , 'amir']
+
+    let vowel = ['a','e','i', 'o', 'u','A','E','I', 'O', 'U']
+
+    function newArray(word) {
+        return word.startsWith("A") || word.startsWith("E") || word.startsWith("I") || word.startsWith("O") || word.startsWith("U")||word.startsWith("a") || word.startsWith("e") || word.startsWith("i") || word.startsWith("o") || word.startsWith("u") 
+
+    }
+    let vowName = array.filter(newArray)
+    console.log(vowName)
+
+</script>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .main{
+        width: 30%;
+        height: 10%;
+    }
+    .main img{
+        width: 100%;
+    }
+    button{
+       padding: 5px 20px;
+        margin: 20px 10px;
+    }
+</style>
+<body>
+    <div class="main">
+        <img src="car-shifting.jpg" alt="">
+        <button id="btn1"> + </button>
+        <button id="btn2"> 0 </button>
+        <button id="btn3"> - </button>
+    </div>
+</body>
+
+<script>
+    let add = document.getElementById('btn1')
+    let btn2 = document.getElementById('btn2')
+    let min = document.getElementById('btn3')
+
+    add.addEventListener( "click" , ()=> {
+        let oldNum = Number(btn2.innerText)
+        min.disabled = false
+        if(oldNum<5){
+            btn2.innerText = oldNum +1
+        }
+        else{
+            add.disabled = true
+        }
+    })
+
+    min.addEventListener( "click" , ()=> {
+        let oldNum = Number(btn2.innerText)
+
+        add.disabled = false
+        if(oldNum>0){
+            btn2.innerText = oldNum -1
+        }
+        else{
+            min.disabled = true
+        }
+    })
+</script>
+</html>

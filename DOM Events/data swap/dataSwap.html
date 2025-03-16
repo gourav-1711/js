@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    .main{
+        width: 700px;
+        margin: 50px auto;
+        border: 1px solid;
+    }
+    .content{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 50px;
+    }
+    .box{
+        width: 47%;
+        background-color: rgb(90, 0, 128);
+        color: white;
+        box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
+        padding: 30px;
+    }
+    .box:nth-child(2){
+        width: 47%;
+        background-color: rgb(128, 0, 0);
+        color: white;
+        box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
+        padding: 30px;
+    }
+    .main button{
+        padding: 10px 20px;
+        text-transform: uppercase;
+        font-weight: 400;
+        background-color: aqua;
+        border-radius: 6px;
+        border: none;
+        box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
+        display: table;
+        margin: 50px auto;
+    }
+</style>
+<body>
+    
+    <div class="main">
+        <div class="content">
+            <div class="box" id="box-1">
+                <h1>box 1 left</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ullam nesciunt fugit aperiam delectus dolorum incidunt possimus corporis, omnis saepe architecto sequi odio expedita, consectetur aspernatur praesentium fugiat maiores molestias.</p>
+            </div>
+            <div class="box" id="box-2" >
+                <h1>box 2 right</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ullam nesciunt fugit aperiam delectus dolorum incidunt possimus corporis, omnis saepe architecto sequi odio expedita, consectetur aspernatur praesentium fugiat maiores molestias.</p>
+            </div>
+        </div>
+
+        <button id="btn" onclick="swap()">
+            swap box
+        </button>
+    </div>
+</body>
+
+<script>
+    let box1 = document.getElementById('box-1')
+    let box2 = document.getElementById('box-2')
+
+    function swap(){
+       let box1Data= box1.innerHTML
+       let box2Data= box2.innerHTML
+       
+        box1.innerHTML = box2Data
+        box2.innerHTML = box1Data
+        
+    }
+
+</script>
+</html>

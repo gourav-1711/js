@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+}
+.main{
+    display: table;
+    margin:100PX auto;
+    width: 400px;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid black;
+}
+label{
+    padding: 20px;
+    text-align: center;
+    font-size: 35px;
+}
+input{
+    width: 100%;
+    padding: 10px;
+}
+h2{
+    margin-top: 50px;
+}
+.output{
+    margin-top: 20px;
+    border: 1px solid;
+    height: 100px;
+    padding: 10px;
+    text-align: center;
+    line-height: 30px;
+}
+button{
+    padding: 10px 20px;
+    margin-top: 10px;
+}

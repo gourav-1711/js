@@ -1,0 +1,38 @@
+@media only screen and (min-width:200px) and (max-width:567px) {
+    header nav .right {
+        display: none;
+    }
+
+    header nav .left img {
+        width: 80%;
+    }
+
+    header nav .bar {
+        display: block;
+        font-size: 40px;
+    }
+
+    .showmenu {
+        top: 8% !important;
+        left: 0% !important;
+        transition: 3s ease-in-out;
+    }
+
+    header nav .menu {
+        display: block;
+        position: fixed;
+        top: 8%;
+        left: -70%;
+        text-transform: uppercase;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.514);
+        text-align: center;
+        transition: 1s;
+        color: white;
+    }
+
+    .menu ul li {
+        padding: 20px 20px;
+        border-bottom: 1px solid black;
+    }
+}

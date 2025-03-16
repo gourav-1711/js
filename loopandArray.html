@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    let a = 1
+    let b = 1
+
+    //for loop
+
+    // for ( let a = 1 ; a<=10; a++){
+    //     console.log(a);
+    // }
+
+    //while loop
+
+    // while (a <= 10) {
+    //     console.log(a);
+    //     a++
+    // }
+
+    // while (b <= 10) {
+    //     console.log("hello");
+    //     b++
+    // }
+    // console.log("hello");
+
+    //use of break
+
+    // for(a=1; a<10; a++){
+    //     if( a ==7){
+    //         break;
+    //     }
+    //     console.log(a);
+    // }
+
+    //use of continue
+
+    // for(a=1; a<10; a++){
+    //     if( a ==7){
+    //         continue;
+    //     }
+    //     console.log(a);
+    // }
+
+    // array
+    //array methods
+
+    let array = ["ws", "cube", "151"]
+    let newArray = ["new", "arrar", "350"]
+
+
+    //console.log(array);
+
+    //console.log(array.length);
+
+    //console.log(array.toString());
+
+    //index starts at 0
+
+    //console.log(array.at(1));
+
+    //console.log(array.at(2));
+
+    //console.log(array.join(" ")); //comine array value
+
+    //console.log(array.pop()); // shows the last value and removes it from array
+
+
+    //console.log(array.push("gaurav")); // shows the new array lenght and adds new value to array
+    //console.log(array);
+    //console.log(array.shift()); // removes the value at index 0
+
+    //console.log(array.unshift("new")); //adds a value at the start of an array and shows the new lenght
+
+    //console.log(array);
+
+    //delete array [0]; //leaves a empty spot and it will always be there
+    // console.log(array.unshift("new"));
+
+    //  console.log(array);
+
+    //let newArr = newArray.concat(array) // combines two array
+
+    //console.log(newArr);
+
+    //copy within
+    //The copyWithin() method overwrites the existing values.
+
+    //The copyWithin() method does not add items to the array.
+
+    //The copyWithin() method does not change the length of the array.
+
+    //array.copyWithin(2,0 ,2) // console.log(array.copyWithin( 0 ,0,3));
+
+    // console.log(array);
+
+    // console.log(newArr = array.flat());// creats a copy array
+    //console.log(newArr);
+
+    //newArr.splice(0,2) // removes the value from start and can add new value at start
+    // newArr.splice(0, 2, "NEW", "WS")
+
+    //console.log(newArr.toSpliced(0,2)); // it creates a new array
+
+    // console.log(newArr.slice(4));  // it creates a new array //can remove value but does not change the original array 
+
+    //console.log(newArr.slice(0, 2)); // only keeps the value of index given also exludes the last index
+
+    // console.log(newArr);
+
+    console.log(array);
+
+    console.log(array.indexOf("151", 2));
+    //shows the index of given value // 2 is index number for where to start search
+    //  Array.indexOf() returns -1 if the item is not found.
+    // If the item is present more than once, it returns the position of the first occurrence.
+
+    console.log(array.lastIndexOf("cube"));
+
+
+    console.log(array.includes("ws")); //returns the value in true or false according to statement 
+
+    console.log(array.includes("wsb"));
+
+    console.log(array.sort());
+
+    console.log(array.reverse());
+
+    let number = [5, 8, 34, 23, 87, 2]
+
+    console.log(number.sort()); //ascending order
+
+    //console.log(newNum = number.toSorted()); //creates a new array
+    //console.log(newNum);
+
+    console.log(number.reverse());
+
+    console.log(number.sort(function(a, b){return a - b})); //for asending
+
+
+    console.log(number.sort(function(a, b){return b - a})); //descending
+
+
+    console.log(number.sort(function(){return 0.5 - Math.random()}));
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>

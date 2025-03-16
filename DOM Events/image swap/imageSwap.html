@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .main{
+        width: 850px;
+        margin: auto;
+        border: 1px solid;
+        text-align: center;
+    }
+    img{
+        margin-top: 0px;
+    }
+</style>
+
+<body>
+
+    <div class="main">
+        <img src="1.jpg" alt="" width="700px" height="300" id="img1"  onmouseover="changeImg(this)">
+        <img src="2.jpg" alt="" width="200px" height="200"
+        id="img2"  onmouseover="changeImg(this)">
+        <img src="3.jpg" alt="" width="200px" height="200" id="img3" onmouseover="changeImg(this)">
+        <img src="4.jpg" alt="" width="200px" height="200" id="img4" onmouseover="changeImg(this)">
+        <img src="1.jpg" alt="" width="200px" height="200" id="img4" onmouseover="changeImg(this)">
+    </div>
+    
+</body>
+
+<script>
+
+    let img1 = document.getElementById('img1')
+
+    function changeImg(image){
+        let imageSrc = image.src
+        img1.src = image.src
+    }
+</script>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    .main{
+        width: 600px;
+        margin: 50px auto;
+        background-color: black;
+        font-family: sans-serif;
+    }
+    table{
+        width: 100%;
+    }
+    input{
+        padding: 20px 5px;
+        width: 100%;
+    }
+    table input{
+        width: 100%;
+        outline: none;
+    }
+    button{
+        padding: 20px 5px;
+        width: 100%;
+    }
+    div{
+        padding: 25px;
+        width: 600px;
+        border: 1px solid;
+        text-align: end;
+    }
+    #box{
+        width: 91.1%;
+        background-color: white;
+        color: rgb(0, 0, 0);
+        font-weight: 800;
+        font-size: 25px;
+        height: 25px;
+    }
+    .num{
+        background-color: rgb(0, 200, 255);
+        border: 1px solid ;
+        font-size: 23px;
+        
+    }
+    .sym{
+        background-color: orange;
+        border: 1px solid ;
+        font-size: 23px;
+        box-shadow: 0px 0px 10px 2px rgba(137, 137, 137, 0.568) ;
+    }
+    #result , .clear{
+        background-color: rgb(0, 255, 17);
+        border: 1px solid ;
+        box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 0.066) ;
+        /* font-size: 23px; */
+    }
+    h1{
+        color: white;
+        text-align: center;
+        font-size: 45px;
+    }
+    /* .clear{
+        background-color: rgb(0, 255, 17);
+         /* border: 1px solid ; */
+    /* } */ 
+    
+</style>
+<body>
+    
+    <div class="main">
+        <h1>Calculator</h1>
+         <div id="box"> </div>
+        <table >
+            
+            <tr>
+                <td> <input type="button" value="1" class="num"></td>
+                <td> <input type="button" value="2" class="num"></td>
+                <td> <input type="button" value="3" class="num"></td>
+                <td> <input type="button" value="+" class="sym num"></td>
+                
+            </tr>
+            <tr>
+                <td> <input type="button" value="4" class="num"></td>
+                <td> <input type="button" value="5" class="num"></td>
+                <td> <input type="button" value="6" class="num"></td>
+                <td> <input type="button" value="-" class="sym num"></td>
+            </tr>
+            <tr>
+                <td> <input type="button" value="7" class="num"></td>
+                <td> <input type="button" value="8" class="num"></td>
+                <td> <input type="button" value="9" class="num"></td>
+                <td> <input type="button" value="*" class="num sym"></td>
+            </tr>
+            <tr>
+                <td> <input type="button" value="0" class="num"></td>
+                <td> <input type="button" value="/" class="sym num"></td>
+                <td> <input type="button" value="%" class="sym num"></td>
+                <td> <input type="button" value="." class="sym num"></td>
+            </tr>
+            <tr>
+                <td colspan="2"> <input type="button" value="=" id="result"></td>
+                <td colspan="2"> <button class="clear">clear all</button></td>
+            </tr>
+        </table>
+    </div>
+    
+</body>
+
+<script>
+    let box = document.querySelector("#box")
+    let num = document.querySelectorAll(".num")
+    let sym = document.querySelectorAll(".sym")
+    let clear = document.querySelector(".clear")
+    let result = document.querySelector("#result")
+
+    let v = ["=", '-', '*' ,'/','%']
+    num.forEach((num)=>{
+        num.addEventListener("click" ,()=>{
+           
+            box.innerHTML += num.value
+           
+        })
+    })
+    // sym.forEach((sym)=>{
+    //     sym.addEventListener("click" ,()=>{
+    //         v = (sym.value)
+    //         box.innerHTML += v
+
+    //     })
+    // })
+    result.addEventListener("click", ()=>{
+        // v = eval(box.innerHTML)
+        box.innerHTML = eval(box.innerHTML)
+    })
+
+    clear.addEventListener("click", ()=>{
+        let a = box.innerHTML
+        box.innerHTML=" "
+        
+    })
+
+    
+    
+</script>
+</html>

@@ -1,0 +1,200 @@
+.count{
+    display: table;
+    margin: 20px auto;
+}
+.login-page {
+    width: 360px;
+    padding: 0% 0 0;
+    margin: auto;
+   visibility: hidden;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+.login-active{
+    padding: 1% 0 0;
+    visibility: visible;
+    opacity: 1;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.count{
+    font-size: 75px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 45px;
+    text-align: center;
+}
+
+.form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4CAF50;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
+.form button:hover,
+.form button:active,
+.form button:focus {
+    background: #43A047;
+}
+
+.form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
+.form .message a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.form .register-form {
+    display: none;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.container:before,
+.container:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.container .info {
+    margin: 50px auto;
+    text-align: center;
+}
+
+.container .info h1 {
+    margin: 0 0 15px;
+    padding: 0;
+    font-size: 36px;
+    font-weight: 300;
+    color: #1a1a1a;
+}
+
+.container .info span {
+    color: #4d4d4d;
+    font-size: 12px;
+}
+
+.container .info span a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.container .info span .fa {
+    color: #EF3B3A;
+}
+
+.btn-animate {
+    display: table;
+    margin: 50px auto;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 16px 47px -15px #590b9b;
+    background: none;
+    /* -webkit-transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1); */
+    transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+    border-radius: 8px;
+    overflow: hidden;
+    outline: none;
+    /* -webkit-transform: translateZ(0); */
+    transform: translateZ(0);
+}
+
+.btn-animate span {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-animate:before,
+.btn-animate:after {
+    border-radius: 8px;
+    content: '';
+    z-index: -1;
+    background: -webkit-linear-gradient(350deg, #560a9b, #9e158f);
+    background: linear-gradient(100deg, #560a9b, #9e158f);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-animate:after {
+    background: -webkit-linear-gradient(350deg, #003f77, #05c4b5);
+    background: linear-gradient(100deg, #003f77, #05c4b5);
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition-delay: .1s;
+    transition-delay: .1s;
+}
+
+.btn-animate:hover {
+    box-shadow: 0px 16px 47px -15px #003f77;
+}
+
+.btn-animate:hover:after {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+.btn-animate:active {
+    -webkit-transform: translateY(4px) translateZ(0);
+    transform: translateY(4px) translateZ(0);
+    box-shadow: 0px 8px 10px -6px #003f77;
+}

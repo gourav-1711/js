@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <label for="">from</label>
+        <br>
+        <input type="datetime-local" name="" id="from">
+        <br>
+        <label for="">to</label>
+        <br>
+        <input type="datetime-local" name="" id="to">
+
+
+        <h2>remainig time</h2>
+        <div class="output">
+            hello
+        </div>
+        <button id="btn">check</button>
+    </div>
+    
+    
+    
+</body>
+
+<script>
+
+    let output = document.querySelector(".output")
+    let check = document.querySelector("#btn")
+    let from =document.querySelector("#from")
+    let to = document.querySelector("#to")
+
+    
+    
+    let fromDate = new Date(1970)
+    let toDate = new Date()
+
+    check.addEventListener("click" , ()=>{
+        output.innerHTML = toDate
+        
+    })
+</script>
+</html>
