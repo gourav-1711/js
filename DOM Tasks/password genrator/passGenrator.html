@@ -15,15 +15,15 @@
         margin: 0;
         box-sizing: border-box;
     }
-    body {
+    /* body {
         height: 100vh;
         background: rgb(63, 94, 251);
         background: linear-gradient(74deg, rgba(63, 94, 251, 1) 28%, rgba(238, 0, 0, 1) 100%);
-    }
+    } */
 
     .main {
         background-color: #00DBDE;
-        background-image: linear-gradient(90deg, #395dff 0%, #fe2b5dfb 100%);
+        background-image: linear-gradient(90deg, #395dff 0%, #f50039 100%);
         width: 40%;
         margin: 50px auto;
         padding: 20px;
@@ -132,30 +132,28 @@
     let txtlenght = document.querySelector("#lenght")
     let copy = document.querySelector("#copy")
 
-    gen.addEventListener("click", () => {
-        let finalchar = ''
-
-        checkBox.forEach((checkBox, index) => {
-            if (checkBox.checked) {
-                finalchar = finalchar + char[index]
+    gen.addEventListener("click" , ()=>{
+        let finalChar = ''
+        checkBox.forEach((check , index)=>{
+            if(check.checked){
+                finalChar = finalChar +char[index]
             }
         })
 
         let finalPass = ''
 
-        for (let i = 0; i < txtlenght.value; i++) {
-            finalPass += finalchar.charAt(Math.floor(Math.random() * finalchar.length))
+        for(let a = 0 ;a<txtlenght.value; a++){
+            finalPass += finalChar.charAt(Math.floor(Math.random()*finalChar.length))
         }
-
         mainPass.innerHTML = finalPass
     })
+
 
     copy.addEventListener("click", () => {
         let result = mainPass.innerHTML;
         navigator.clipboard.writeText(result)
     })
 
-    console.log("hello 2");
     
 </script>
 
