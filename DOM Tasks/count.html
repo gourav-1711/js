@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 class="h1" data-value="350" style="font-size: 60px; text-align: center;"> 000</h1>
+    <h1 class="h1" data-value="200" style="font-size: 60px; text-align: center;"> 000</h1>
+    <h1 class="h1" data-value="300" style="font-size: 60px; text-align: center;"> 000</h1>
+    <h1 class="h1" data-value="400" style="font-size: 60px; text-align: center;"> 100</h1>
+  
+</body>
+<script>
+
+
+    let h1 = document.querySelectorAll("h1")
+    let inter = 100
+
+    let a = 0
+  
+    h1.forEach((text)=>{
+        // console.log(text.getAttribute("data-value"));
+        let endVal = text.getAttribute("data-value")
+        let dur = inter/endVal/2
+        console.log(dur); 
+        let a = 0o0
+        let count = setInterval(() => {
+            // console.log(dur);
+            
+            
+            text.innerHTML = a++
+            if(text.innerHTML == endVal){
+                clearInterval(count)
+            }
+        }, dur);
+        
+        
+    })    
+    
+
+</script>
+
+</html>

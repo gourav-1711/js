@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: black;
+        }
+
+        canvas {
+            width: 800px;
+            height: 800px;
+            margin-left: -400px;
+            margin-top: -400px;
+            left: 50%;
+            top: 50%;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+
+    var a, //Angle to player from origo var
+        h, //Radius of player from origo
+        M = Math, //Sub Math
+        S = M.sin, //Sub Sin()
+        C = M.cos, //Sub Cos()
+        A = M.atan2, //Sub Atan2(y,x)
+        R = M.round, //Sub Round()
+        P = M.PI, //Sub PI
+        d = document, //Sub document
+        s = 400, //Half the width of the game, width of planet
+        k = 20, //Diameter of circles
+        i, //Iterator for loops
+        z = s / 2, //Half the width of s, alas half the width of the planet
+        vx, //Horisontal speed (x)
+        vy, //Vertical speed (y)
+        p, //Is engine on?
+        t, //Temp variable, for tangent angle 
+        n, //Another temp var
+        l = 0.99, //Drag
+        q = 0, //Number of enemies
+        w, //Have crashed var
+        o, //Phase of one individual enemy
+        g = 0, //Highscore
+        K = 0, //Score
+        F = d.createElement('canvas'), //create a canvas to draw on
+        X = F.getContext('2d');
+    (window.onresize = function () {
+        F.style.transform = 'scale(' + Math.min(window.innerHeight, window.innerWidth) / 850 + ')';
+    })();
+
+
+    d.body.appendChild(F);
+    F.width = F.height = s * 2;
+    X.font = "50px Courier";
+    X.textAlign = 'center';
+
+    //Draw Circle
+    function O(x, y, r, c) {
+        X.beginPath();
+        X.arc(x + s, y + s, r, 0, 2 * P, 0);
+        X.fillStyle = c;
+        X.fill();
+    }
+
+    //Draw Circle
+    function drawEmojii(x, y, t, r) {
+        //  ctx.font = "30px";
+        var tx = x + s;
+        var ty = y + s;
+        //  r -= Math.PI/2;
+        X.translate(-tx, -ty);
+        X.rotate(-r);
+
+        X.fillText(t, 0, 0);
+
+        X.rotate(r);
+        X.translate(tx, ty);
+    }
+
+    //Die
+    function D() {
+        g = M.max(g, K);
+        x = 0, y = -z * 1.2;
+        vx = 8, vy = 0;
+        K = 0;
+        U();
+    }
+
+    d.ontouchstart = d.ontouchend = d.onmousedown = d.onmouseup = function (e) { e.preventDefault(); p = /(st|wn)/.test(e.type) };
+
+    function T(a, b) { return M.sqrt(a * a + b * b); } //Pythagoras
+
+    function U(j) {
+        a = A(y, x); //Angle from origo
+        t = a + P / 2; //tangent angle
+        r = T(x, y); //Radius
+        K += T(vx, vy) / 30; //Add to score
+
+        if (p) { //Rocket power?
+            vy += S(t) * .3; //Add speed in...
+            vx += C(t) * .3; //...tangent direction
+        }
+
+        //Gravity
+        vy += S(a + P) * .2 / r * r;
+        vx += C(a + P) * .2 / r * r;
+
+        O(0, 0, s, '#a00'); //Outer circle
+        O(0, 0, z, '#600'); //Inner cicle
+
+        q = Math.min(Math.floor(K / 200), 7); //Number of enemies increase every 100 points
+
+        w = 0; //Have crashed var
+        for (i = 0; i < q; i++) {
+            a = P * 2 * i / q; //Calculate angle to satellite in radians
+            o = z + M.abs(S(j / 2000 + a) * (z - k * 2)); //The "wave" phase for this satellite -> orbital height
+            o *= (1 - M.abs(M.pow(C(K * P / 200), 60)));
+
+            n = R(C(a) * o); //X position of satellite
+            t = R(S(a) * o); //Y position of satellite
+            O(n, t, k / 2, 'red'); //Draw satellite
+
+            if (T(n - x, t - y) < k) { //Use pythagoras to calculate distance to player - has it crashed?
+                w = 1;
+            }
+        }
+
+        if (K > 10 && (r < z + k || T(x, y) > s || w)) { //Did game end?
+            setTimeout(D, 999);
+        } else {
+            vx *= l; vy *= l; //Add some drag
+            x += vx; y += vy; //Move by its speed
+            O(x, y, k / 2, '#000'); //Draw player circle
+            //    X.moveTo(x,y);
+            var r = Math.atan2(vy, vx);
+            drawEmojii(0, 0, "🚀", r);
+            requestAnimationFrame(U); //Animate again
+        }
+        X.fillStyle = '#000';
+        X.fillText(R(K) + "/" + R(g), s, s);
+    }
+
+    D();
+</script>
+
+</html>

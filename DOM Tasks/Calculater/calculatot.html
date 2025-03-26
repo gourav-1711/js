@@ -9,10 +9,13 @@
 <style>
 
     .main{
-        width: 600px;
-        margin: 50px auto;
-        background-color: black;
+        width: 30%;
+        margin: 20px auto;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 2px 4px 6px 1px grey ;
         font-family: sans-serif;
+        border-radius: 10px;
+        border: none;
     }
     table{
         width: 100%;
@@ -20,6 +23,8 @@
     input{
         padding: 20px 5px;
         width: 100%;
+        border-radius: 8%;
+        box-shadow: 0px 2px 5px ;
     }
     table input{
         width: 100%;
@@ -31,20 +36,25 @@
     }
     div{
         padding: 25px;
-        width: 600px;
+        /* width: 600px; */
         border: 1px solid;
         text-align: end;
     }
     #box{
-        width: 91.1%;
-        background-color: white;
+        width: 85%;
+        border: none;
+        background-color: rgba(255, 255, 255, 0);
         color: rgb(0, 0, 0);
         font-weight: 800;
         font-size: 25px;
         height: 25px;
+        border-radius: 10px;
+        margin: 10px 0px;
+        box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.322);
+        overflow: hidden;
     }
     .num{
-        background-color: rgb(0, 200, 255);
+        background-color: rgb(255, 255, 255);
         border: 1px solid ;
         font-size: 23px;
         
@@ -56,15 +66,19 @@
         box-shadow: 0px 0px 10px 2px rgba(137, 137, 137, 0.568) ;
     }
     #result , .clear{
-        background-color: rgb(0, 255, 17);
+        background-color: rgb(0, 0, 0);
+        color: white;
+        text-transform: capitalize;
         border: 1px solid ;
         box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 0.066) ;
         /* font-size: 23px; */
+        border-radius: 10px;
     }
     h1{
-        color: white;
+        color: rgb(0, 0, 0);
         text-align: center;
         font-size: 45px;
+        margin: 5px 0px;
     }
     /* .clear{
         background-color: rgb(0, 255, 17);
@@ -120,30 +134,36 @@
     let clear = document.querySelector(".clear")
     let result = document.querySelector("#result")
 
-    let v = ["=", '-', '*' ,'/','%']
+    let v = ["=", '-', '*' ,'/','%' , '.' , '+']
+
     num.forEach((num)=>{
         num.addEventListener("click" ,()=>{
            
             box.innerHTML += num.value
+
+        //     let oldvalue = box.innerHTML
+        //     let lastChar = oldvalue[oldvalue.length-1]
+        //    let  removeChar = oldvalue.slice(0 , oldvalue.length-1)
+        // //    console.log(v.includes(lastChar) , lastChar);
            
+        //     // console.log(lastChar , oldvalue ,removeChar);
+        //     if( v.includes(box.innerHTML) && v.includes(lastChar)){
+        //         console.log(removeChar);
+                
+        //         box.innerHTML = removeChar + num.value
+                
+        //     }
+ 
         })
     })
-    // sym.forEach((sym)=>{
-    //     sym.addEventListener("click" ,()=>{
-    //         v = (sym.value)
-    //         box.innerHTML += v
 
-    //     })
-    // })
-    result.addEventListener("click", ()=>{
-        // v = eval(box.innerHTML)
+    result.addEventListener("click", ()=>{       
         box.innerHTML = eval(box.innerHTML)
     })
 
     clear.addEventListener("click", ()=>{
         let a = box.innerHTML
-        box.innerHTML=" "
-        
+        box.innerHTML=" "  
     })
 
     

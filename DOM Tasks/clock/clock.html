@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .time {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            text-align: center;
+            width: 450px;
+            margin: auto;
+            font-size: 40px;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid white;
+        }
+
+
+        body {
+            background: #000000;
+
+
+        }
+
+        h2 {
+            font-family: 'Share Tech Mono', monospace;
+            color: #ffffff;
+            text-align: center;
+            /* position: absolute; */
+            left: 50%;
+            top: 50%;
+            /* transform: translate(-50%, -50%); */
+            color: #daf6ff;
+            text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="MAIN">
+        <div class="time">
+            <h2 class="hour"> </h2>
+            <h2>:</h2>
+            <h2 class="min"> </h2>
+            <h2>:</h2>
+            <h2 class="sec"> </h2>
+            <h2 class="am"> </h2>
+        </div>
+        <div class="week">
+            <h2 class="w"> </h2>
+            <h2 class="month"></h2>
+        </div>
+    </div>
+
+</body>
+
+<script>
+
+
+
+    let hour = document.querySelector(".hour")
+    let min = document.querySelector(".min")
+    let sec = document.querySelector(".sec")
+    let am = document.querySelector(".am")
+
+    function time() {
+        let today = new Date()
+        hour.innerHTML = today.getHours()
+        min.innerHTML = today.getMinutes()
+        sec.innerHTML = today.getSeconds()
+        am.innerHTML = "AM"
+
+        if(hour.innerHTML>12){
+             am.innerHTML = "PM"
+        }
+        else if(hour.innerHTML < 12){
+            am.innerHTML = "AM"
+        }
+
+        else if (hour.innerHTML < 10) {
+            hour.innerHTML = "0" + today.getHours()
+
+        }
+
+        else if (min.innerHTML < 10) {
+            min.innerHTML = "0" + today.getMinutes()
+        }
+
+
+        else if (sec.innerHTML < 10) {
+            sec.innerHTML = "0" + today.getSeconds()
+
+        }
+    }
+    time()
+
+    setInterval(() => { time() }, 1000)
+
+
+</script>
+
+</html>

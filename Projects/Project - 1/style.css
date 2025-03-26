@@ -1,0 +1,14 @@
+.search{
+    display: table;
+
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.411);
+
+}
+.output{
+    margin-top: 10px;
+    /* border: 1px solid; */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.411);
+    display: table;
+    padding: 20px;
+    font-size: 25px;
+}

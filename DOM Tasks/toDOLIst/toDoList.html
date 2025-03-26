@@ -11,12 +11,21 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
+
+        body{
+            background-color: rgb(241, 241, 241);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            outline: none;
+        }
         .main {
             width: 350px;
-            margin: auto;
-            text-transform: uppercase;
+            margin: 10px auto;
+            text-transform: capitalize;
             padding: 10px;
-
+            border: 1px solid;
+            box-shadow: 0px 2px 10px ;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: white;
         }
 
         .task-input {
@@ -45,12 +54,8 @@
         }
 
         .li {
-            font-size: 16px;
-        }
-
-
-        .complete {
-            text-decoration: line-through;
+            font-size: 25px;
+            transition: 0.7s;
         }
 
         .del {
@@ -58,18 +63,19 @@
             background-color: aqua;
         }
 
-        .delete {
+        .li button {
             background-color: rgba(255, 0, 0, 0);
             border: none;
+
+        }
+
+        .delete {
             color: rgb(255, 0, 0);
             border-radius: 8px;
             text-decoration: none;
             font-size: 18px;
         }
 
-        .check {
-            width: 50px;
-        }
 
         .create {
             text-transform: capitalize;
@@ -81,6 +87,18 @@
             border: 1px solid black;
             border-radius: 6px;
             box-shadow: 0px 0px 10px 0.5px rgba(128, 128, 128, 0.708);
+        }
+
+        .green {
+            background-color: rgb(38, 205, 38);
+            color: white;
+            text-decoration: line-through;
+        }
+
+        i {
+            font-size: 20px;
+            margin-left: 11px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -106,51 +124,60 @@
     let inputTEXT = document.querySelector(".task-input")
     let ul = document.querySelector(".ul")
 
-
-    create.addEventListener("click", () => {
-        if (inputTEXT.value == "") {
-            alert("enter a task")
-        }
-        else {
-            function save() {
-                localStorage.setItem("task", ul.innerHTML)
-            }
-            let list = document.createElement("li")
-            list.innerHTML = `<input type="checkbox" class="check">
-                             <span class="task7"> ${inputTEXT.value} </span>
-                            <button class="delete"> <i class="fa-solid fa-trash"></i> </button>
-                             `
-            ul.append(list)
-            list.classList.add("li")
-            inputTEXT.value = ""
-
-            save()
-            let delete1 = document.querySelectorAll(".delete")
-            let check = document.querySelectorAll(".check")
-
-            delete1.forEach((delete2) => {
-                delete2.addEventListener("click", () => {
-                    delete2.parentElement.remove()
-                    save()
-                })
-            })
-
-            check.forEach((check1) => {
-                check1.addEventListener("click", () => {
-                    list.classList.toggle("complete")
-                    save()
-                })
-            })
-
-        }
-
-    })
+    function save() {
+        localStorage.setItem("task", ul.innerHTML)
+    }
 
 
     function load() {
         ul.innerHTML = localStorage.getItem("task")
     }
     load()
+
+    create.addEventListener("click", () => {
+        if (inputTEXT.value == "") {
+            alert("enter a task")
+        }
+        else {
+            let list = document.createElement("li")
+            list.innerHTML = `<span class="task7"> ${inputTEXT.value} </span>
+                            <button class=""> <i class="fa-solid fa-trash delete"></i> </button>
+                             `
+            ul.append(list)
+            list.classList.add("li")
+            inputTEXT.value = ""
+            save()
+        }
+
+        let del = document.querySelectorAll(".delete")
+
+        del.forEach((delBtn) => {
+            delBtn.addEventListener("click", () => {
+                delBtn.parentElement.parentElement.remove()
+                save()
+            })
+        })
+
+    })
+
+
+    let del = document.querySelectorAll(".delete")
+
+    del.forEach((delBtn) => {
+        delBtn.addEventListener("click", () => {
+            delBtn.parentElement.parentElement.remove()
+            save()
+        })
+    })
+
+
+    ul.addEventListener("click", (li) => {
+        console.log(li.target.tagName);
+        if (li.target.tagName == "LI") {
+            li.target.classList.toggle("green")
+            save()
+        }
+    })
 
 
 

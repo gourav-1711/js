@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <div class="main">
+        <div class="box">
+            <img src="img/cascade-boat-clean-china-natural-rural.jpg" alt="" class="gallary-img">
+        </div>
+        <div class="box">
+            <img src="img/morskie-oko-tatry.jpg" alt="" class="gallary-img">
+        </div>
+        <div class="box">
+            <img src="img/pexels-pixabay-206359.jpg" class="gallary-img">
+        </div>
+        <div class="box">
+            <img src="img/pexels-pixabay-268533.jpg" alt="" class="gallary-img">
+        </div>
+        <div class="box">
+            <img src="img/pexels-pixabay-462162.jpg" alt="" class="gallary-img">
+        </div>
+        <div class="box">
+            <img src="img/pexels-samandgos-709552.jpg" alt="" class="gallary-img">
+        </div>
+        <div class="box">
+            <img src="img/pexels-souvenirpixels-414612.jpg" alt="" class="gallary-img">
+        </div>
+        <div class="box">
+            <img src="img/pexels-souvenirpixels-417074.jpg" alt="" class="gallary-img">
+        </div>
+        <div class="box">
+            <img src="img/wet-vietnam-mountain-flow-stream-rural.jpg" alt="" class="gallary-img">
+        </div>
+
+    </div>
+
+    <div class="black"></div>
+
+    <div class="lightBox">
+        <img src="img/cascade-boat-clean-china-natural-rural.jpg" alt="">
+    </div>
+
+</body>
+
+<script>
+
+
+
+    let img = document.querySelectorAll(".gallary-img")
+    let lightBox = document.querySelector(".lightBox")
+    let black = document.querySelector(".black")
+
+    img.forEach((image)=>{
+        image.addEventListener("click" , ()=>{
+            console.log("hello");
+            lightBox.children[0].src = image.src
+            lightBox.classList.add("active")
+            black.classList.add("active")
+        })
+    })
+    
+
+    black.addEventListener("click" , ()=>{
+        lightBox.classList.remove("active")
+            black.classList.remove("active")
+    })
+</script>
+</html>

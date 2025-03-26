@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(255, 115, 0);
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .main {
+            border-radius: 10px;
+            /* display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center; */
+            border: 1px solid black;
+            width: 30%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 2px 1px rgba(88, 88, 88, 0.288);
+        }
+        @media only screen and (max-width: 1100px) {
+            .main{
+                width: 50%;
+            }
+        }
+        @media only screen and (max-width: 600px) {
+            .main{
+                width: 70%;
+            }
+        }
+
+        h1 {
+            font-size: 50px;
+            text-align: center;
+            text-transform: capitalize;
+            color: white;
+            text-shadow: 2px 4px 10px black;
+        }
+
+        .btn {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        button {
+            display: table;
+            margin: auto;
+            padding: 10px 25px;
+            text-transform: capitalize;
+            font-size: 20px;
+        }
+
+        #start {
+            background-color: rgb(30, 228, 30);
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 4px;
+            box-shadow: 0px 2px 5px 1px rgba(89, 255, 6, 0.459);
+        }
+
+        #stop {
+            background-color: rgb(218, 27, 27);
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            box-shadow: 0px 2px 5px 1px rgba(255, 3, 3, 0.445);
+        }
+
+        #reset {
+            background-color: rgb(46, 91, 225);
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 4px;
+            box-shadow: 0px 2px 5px 1px rgba(8, 87, 223, 0.459);
+        }
+
+        .timer {
+            font-size: 50px;
+            margin: auto;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>stop watch</h1>
+    <div class="main">
+        <div class="timer"> 00 : 00 : 00</div>
+        <div class="btn">
+            <button id="start">
+                start
+            </button>
+            <button id="stop"> stop</button>
+            <button id="reset"> reset</button>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+<script>
+    let start = document.querySelector("#start")
+    let stop = document.querySelector("#stop")
+
+    let time = document.querySelector(".timer")
+
+    let secs = 0
+    let msec = 0
+    let mins = 0
+
+    // let timerId = null
+
+
+    start.addEventListener("click", () => {
+        timerId = setInterval(startTime, 10)
+    })
+
+    function startTime() {
+        msec++
+        if (msec == 100) {
+            msec = 0
+            secs++
+            if (secs == 60) {
+                secs = 0
+                mins++
+            }
+        }
+        let msecString = msec < 10 ? `0${msec}` : msec
+        let secsString = secs < 10 ? `0${secs}` : secs
+        let minsString = mins < 10 ? `0${mins}` : mins
+
+
+        time.innerHTML = `${minsString} : ${secsString} : ${msecString}`
+    }
+
+    stop.addEventListener("click", () => {
+        clearInterval(timerId)
+    })
+
+    let reset = document.querySelector("#reset")
+
+    reset.addEventListener("click", () => {
+        clearInterval(timerId)
+        time.innerHTML = "00 : 00 : 00"
+    })
+
+
+
+
+
+</script>
+
+</html>
