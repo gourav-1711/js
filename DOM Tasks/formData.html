@@ -1,11 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* body {
+        } */
+
+        .main {
+            width: 50%;
+            margin: 10px auto;
+            padding: 10px;
+            border: 1px solid;
+        }
+
+        form {
+            width: 90%;
+            margin: auto;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0px;
+            /* text-transform: capitalize; */
+        }
+
+        label {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            text-transform: capitalize;
+
+        }
+
+        label input {
+            width: 10%;
+            display: table;
+            margin: 0px;
+        }
+        input::placeholder{
+            text-transform: capitalize;
+
+        }
+
+        form button {
+            display: table;
+            padding: 7px 20px;
+            text-transform: capitalize;
+            font-size: 20px;
+            font-weight: bold;
+            margin: auto;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 30px;
+            text-align: center;
+        }
+        table tbody{
+            width: 100%;
+        }
+thead{
+    text-transform: capitalize;
+
+}
+        table button {
+            width: 100%;
+            border: 1px solid black;
+            border-radius: 2px;
+            /* background-color: transparent; */
+            text-transform: capitalize;
+            padding: 10px 0px;
+
+        }
+
+        table button:hover {
+            width: 100%;
+            border: 1px solid black;
+
+            /* background-color: transparent; */
+            color: blue;
+            text-transform: capitalize;
+        }
+
+        td {
+            padding: 5px 10px;
+        }
+    </style>
 </head>
+
 <body>
-    
+
+    <div class="main">
+        <form action="" onsubmit="dataSub(event)">
+            <input type="text" name="myName" id="name" placeholder="enter your name">
+            <br />
+            <input type="email" name="myemail" id="email" placeholder="enter your email">
+            <br />
+            <input type="password" name="mypass" id="pass" placeholder="enter your password">
+            <br />
+            <label for="input"> <input type="radio" name="mygender" value="male"> male</label>
+            <label for="input"> <input type="radio" name="mygender" value="female">female</label>
+            <br />
+            <button> submit </button>
+        </form>
+
+    </div>
+
+    <table border="">
+        <thead>
+            <td>sr</td>
+            <td>name</td>
+            <td>email</td>
+            <td>password</td>
+            <td>gender</td>
+            <td> <button id="clear"> delete all</button></td>
+        </thead>
+        <tbody>
+
+        </tbody>
+
+    </table>
+
 </body>
+
+<script>
+
+
+    let form = document.querySelector("form")
+    let tbody = document.querySelector("tbody")
+
+    let clear = document.querySelector("#clear")
+
+    clear.addEventListener("click" , ()=>{
+        localStorage.removeItem("data")
+        pushData()
+
+    })
+
+
+    function dataSub(event) {
+        event.preventDefault()
+
+        if (event.target.myName.value == "" || event.target.myemail.value == "" || event.target.mypass.value == "" || event.target.mygender.value == "") {
+            alert("Please Fill All The Inputs")
+        }
+
+
+        else {
+            let arr = JSON.parse(localStorage.getItem("data")) ?? []
+
+            let formObj = {
+                name: event.target.myName.value,
+                email: event.target.myemail.value,
+                pass: event.target.mypass.value,
+                gender: event.target.mygender.value,
+            }
+            event.target.reset()
+            arr.push(formObj)
+
+            localStorage.setItem("data", JSON.stringify(arr))
+            pushData()
+
+        }
+
+    }
+
+    function pushData() {
+
+        let newData = JSON.parse(localStorage.getItem("data")) ?? []
+        tbody.innerHTML = ''
+
+        newData.forEach((v, i) => {
+            // console.log(v, i);
+            tbody.innerHTML += `<tr>
+                <td>${i}</td>
+                <td>${v.name}</td>
+                <td>${v.email}</td>
+                <td>${v.pass}</td>
+                <td>${v.gender}</td>
+                <td> <button onclick="del(${i})"> delete</button></td>
+            </tr>`
+
+        });
+    }
+    pushData()
+
+    function del(index) {
+        let userData = JSON.parse(localStorage.getItem("data")) ?? []
+
+        userData.splice(index, 1)
+
+        localStorage.setItem("data", JSON.stringify(userData))
+        pushData()
+
+    }
+
+
+</script>
+
 </html>
