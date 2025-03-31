@@ -170,6 +170,9 @@ thead{
             localStorage.setItem("data", JSON.stringify(arr))
             pushData()
 
+            console.log(ar );
+            
+
         }
 
     }
@@ -182,7 +185,7 @@ thead{
         newData.forEach((v, i) => {
             // console.log(v, i);
             tbody.innerHTML += `<tr>
-                <td>${i}</td>
+                <td>${i+1}</td>
                 <td>${v.name}</td>
                 <td>${v.email}</td>
                 <td>${v.pass}</td>
