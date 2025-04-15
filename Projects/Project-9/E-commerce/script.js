@@ -12,7 +12,7 @@ let data = async () => {
     catList.forEach((v, i) => {
         // console.log(i);
 
-        list.innerHTML += `<li onClick="item('${v}')"> ${v} </li>`
+        list.innerHTML += `<li class="click" onClick="item('${v}')"> ${v} </li>`
     });
 
 
@@ -20,7 +20,7 @@ let data = async () => {
 data()
 
 let item = async (value = '') => {
-    // console.log(value);
+
 
     let apiUrl;
     if (value === '') {
@@ -47,7 +47,7 @@ let item = async (value = '') => {
 
     products.forEach((v, i) => {
         // console.log(v);
-        
+
         // products.innerHTML = ''
 
         // console.log(v);
@@ -59,6 +59,7 @@ let item = async (value = '') => {
                         </div>`
 
     })
+
 
 }
 item()

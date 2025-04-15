@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 10px auto;
+            font-weight: bold;
+        }
+
+        .main {
+            text-transform: uppercase;
+            width: 500px;
+            margin: auto;
+            border: 1px solid;
+            padding: 15px;
+            text-align: center;
+        }
+
+        input {
+            width: 60%;
+            padding: 15px;
+        }
+
+        .output {
+            border: 1px solid black;
+            text-align: center;
+            font-weight: bold;
+            height: 120px;
+            font-size: 20px;
+            line-height: 40px;
+            text-transform: capitalize !important;
+        }
+
+        label {
+            font-size: 18px;
+        }
+
+        .btn {
+            display: table;
+            padding: 10px 20px;
+        }
+
+        h2 {
+            margin-bottom: 40px;
+        }
+
+        .output label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h2>age calculator</h2>
+        <label for=""> date of birth</label>
+        <br />
+        <input type="datetime-local" name="" id="birth" placeholder="birthyear">
+        <br />
+
+
+        <h3>current age</h3>
+        <div class="output">
+
+        </div>
+        <div>
+            <button class="btn">
+                calculate
+            </button>
+        </div>
+    </div>
+
+</body>
+<script>
+
+    let btn = document.querySelector(".btn")
+    let birth = document.querySelector("#birth")
+    let output = document.querySelector(".output")
+
+    btn.addEventListener("click", () => {
+
+        let dob = birth.value;
+        let today = new Date()
+        let fromDate = new Date(dob)
+
+
+        let diffTime = today - fromDate;
+                
+        let year = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365.25));
+
+        let month = Math.floor((diffTime % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24 * 30));
+
+        let day = Math.floor((diffTime % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+
+        let hour = Math.floor((diffTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+
+        let minute = Math.floor((diffTime % (1000 * 60 * 60)) / (1000 * 60))
+
+        let second = Math.floor((diffTime % (1000 * 60)) / (1000))
+
+       
+        output.innerHTML = `${year} year and ${month} month and ${day} day and ${hour} hour and ${minute} minute and ${second}`        
+    })
+
+
+
+
+</script>
+
+</html>

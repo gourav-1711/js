@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .main {
+            color: white;
+            background-image: url(https://wscubetech.co/Assignments/Project-06/image/1802071.webp);
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100vw;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+            z-index: -2;
+            
+        }
+        
+
+        h2 {
+            letter-spacing: 4px;
+            line-height: 60px;
+            text-align: center;
+            font-size: 37px;
+            font-family: sans-serif;
+        }
+
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            
+        }
+
+        .space {
+            margin: 0px 5px;
+        }
+
+        .days , .hour ,.min , .sec{
+            font-size: 28px;
+            padding: 6px 10px;
+            border-radius: 5px;
+            /* color: aquamarine; */
+            background-color: white;
+            color: black;
+        }
+        
+        .ano{
+            background-color: rgba(0, 0, 0, 0.568);
+            height: 100%;
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body>
+<div class="main">
+    <!-- <div class="overlay"></div> -->
+    <div class="ano">
+        <h2>Count Down</h2>
+
+        <h2> Time Left In  2027</h2>
+    
+        <div class="box">
+            <h2 class="days"></h2>
+            <h2 class="space">:</h2>
+            <h2 class="hour"></h2>
+            <h2 class="space">:</h2>
+            <h2 class="min"></h2>
+            <h2 class="space">:</h2>
+            <h2 class="sec"></h2>
+        </div>
+    </div>
+    
+</div>
+    
+</body>
+<script>
+    let day = document.querySelector(".days");
+    let hour = document.querySelector(".hour");
+    let min = document.querySelector(".min");
+    let sec = document.querySelector(".sec");
+    let box = document.querySelector(".box");
+
+
+    setInterval(() => {
+        timer()
+    }, 1000);
+
+    function timer() {
+
+        let future = new Date("Jan 1, 2027 00:00:00").getTime()
+        let today = new Date().getTime()
+
+
+        let distance = future - today
+
+        let dayCount = Math.floor(distance / (1000 * 60 * 60 * 24));
+        let hourCount = Math.floor(distance % (1000 * 60 * 60 * 24) / (1000*60*60));
+        let minCount = Math.floor(distance % (1000 * 60 * 60) / (1000*60));
+        let secCount = Math.floor(distance % (1000 * 60 ) / (1000));
+
+        console.log(dayCount , hourCount , minCount , secCount);
+
+        day.innerHTML = `${dayCount}d`;
+        hour.innerHTML = `${hourCount}h`;
+        min.innerHTML = `${minCount}m`;
+        sec.innerHTML = `${secCount}s`;
+
+
+    }
+    timer()
+
+</script>
+
+</html>

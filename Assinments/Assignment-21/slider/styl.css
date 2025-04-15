@@ -1,0 +1,46 @@
+.main {
+    width: 650px;
+    border: 1px solid;
+    margin: auto;
+    position: relative;
+
+}
+
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+
+.cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.9548611681000525) 0%, rgba(226, 194, 215, 0) 10%, rgba(156, 44, 118, 0) 90%, rgba(0, 0, 0, 0.9436566863073355) 100%);
+}
+
+.img {
+    display: flex;
+}
+
+.box::-webkit-scrollbar {
+    display: none;
+}
+
+img {
+    width: 300px;
+    margin: 10px;
+}
+
+.btn {
+    display: table;
+    margin: auto;
+}
+
+button {
+    margin: 5px;
+    font-size: 20px;
+    padding: 20px 30px;
+}

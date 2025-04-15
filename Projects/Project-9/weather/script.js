@@ -3,7 +3,7 @@ const APIKEY = 'eb63b359e73a5fc49d76fcd36ea64cc9';
 // const imgurl="https://openweathermap.org/img/wn/@2x.png";
 
 let cityInput = document.querySelector("#city");
-let search = document.querySelector("#search")
+let search = document.querySelector("#searchBtn")
 
 let cityN = document.querySelector(".city");
 let temp = document.querySelector(".temp");
