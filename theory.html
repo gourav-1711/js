@@ -1,0 +1,74 @@
+                                              <center>regex</center>
+Regular expressions (regex or regexp) are sequences of characters that form search patterns. These patterns can be used to match, locate, and manage text. Regex is commonly used in various programming languages and tools for text processing tasks such as validation, parsing, and string manipulation.
+
+Here are some key concepts and elements of regex:
+
+1. Literals: Simple characters match themselves. For example, a matches the character 'a'.
+
+2. Metacharacters: Special characters that have specific meanings, such as:
+
+.: Matches any single character except a newline.
+^: Matches the start of a string.
+$: Matches the end of a string.
+*: Matches zero or more occurrences of the preceding element.
++: Matches one or more occurrences of the preceding element.
+?: Matches zero or one occurrence of the preceding element.
+|: Acts as a logical OR between patterns.
+(): Groups patterns together and captures the matched text.
+[]: Defines a character class to match any one of the characters inside the brackets.
+\: Escapes a metacharacter to match it literally.
+
+
+3. Character Classes: Predefined sets of characters enclosed in square brackets, such as:
+
+[a-z]: Matches any lowercase letter.
+[A-Z]: Matches any uppercase letter.
+[0-9]: Matches any digit.
+\d: Matches any digit (equivalent to [0-9]).
+\w: Matches any word character (alphanumeric and underscore).
+\s: Matches any whitespace character (spaces, tabs, line breaks).
+
+
+4. Quantifiers: Specify the number of occurrences to match:
+
+{n}: Matches exactly n occurrences.
+{n,}: Matches n or more occurrences.
+{n,m}: Matches between n and m occurrences.
+Anchors: Specify positions within the text:
+
+\b: Matches a word boundary.
+\B: Matches a position that is not a word boundary.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+=> Here are a few examples of regex patterns:
+
+(1) For Mobile
+->  /^[6-9]\d{9}$/
+✅ [6-9] → First digit must be 6, 7, 8, or 9 (valid Indian mobile number range)
+✅ \d{9} → Followed by exactly 9 more digits
+
+-> \d{3}-\d{2}-\d{4}: Matches a Social Security number format like 123-45-6789.
+
+
+(2) For Email
+-> ^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$: Matches a typical email address format.
+console.log(emailPattern1.test("test@example.com"));  // ✅ true
+console.log(emailPattern1.test("user.name@domain.in")); // ✅ true
+console.log(emailPattern1.test("invalid@domain"));  // ❌ false (missing TLD)
+console.log(emailPattern1.test("@missingusername.com"));  // ❌ false
+
+
+(3) For Strong Password
+-> Minimum 2 uppercase letters (A-Z)
+✅ Minimum 2 special characters (@$!%*?&)
+✅ At least 1 lowercase letter (a-z)
+✅ At least 1 number (0-9)
+✅ Minimum length: 8 characters
+ /^(?=(.*[A-Z]){2,})(?=(.*[@$!%*?&]){2,})(?=.*[a-z])(?=.*\d).{8,}$/;
+
+ -> min 8 and max 12
+ [a-zA-Z]{8,12}
+
+
+

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        .left {
+            width: 20%;
+
+
+        }
+
+        .left img {
+            width: 200px;
+            padding-left: 20px;
+
+        }
+
+        .right {
+            width: 40%;
+            text-align: right;
+            padding: 5px;
+        }
+
+        .right select {
+            margin-right: 20px;
+            /* border: 1px solid black; */
+            padding: 5px;
+            width: 120px;
+            text-align: center;
+            border-radius: 20px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            align-items: center;
+            border: 1px solid white;
+        }
+
+        .right .btn1 {
+            margin-right: 20px;
+            border: 1px solid black;
+            padding: 5px;
+            width: 100px;
+            text-align: center;
+            border-radius: 20px;
+            color: black;
+            background-color: white;
+            cursor: pointer;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .Lastget input {
+            width: 300px;
+            border: 1px solid white;
+            border-radius: 50px;
+            padding: 15px;
+            margin-top: 15px;
+            background-color: rgb(70, 69, 69);
+        }
+
+        .Lastget button {
+            width: 200px;
+            border: 1px solid white;
+            border-radius: 50px;
+            padding: 15px;
+            margin-top: 15px;
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .total {
+            width: 100%;
+            margin: auto;
+
+        }
+
+        .box h2 {
+            border: 1px solid black;
+            padding: 20px;
+            position: relative;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+
+        .box i {
+            right: 20px;
+            position: absolute;
+        }
+
+        .box p {
+            display: none;
+            font-size: 20px;
+            border-radius: 10px;
+            background-color: white;
+            color: black;
+            padding: 0px 10px;
+        }
+
+        .active {
+            display: block !important;
+        }
+
+
+
+        body {
+            top: 0% !important;
+        }
+
+        iframe {
+            display: none !important;
+        }
+
+        .skiptranslate span {
+            display: none;
+        }
+
+        .goog-te-combo {
+            font-size: 22px;
+            color: rgb(255, 255, 255) !important;
+        }
+
+        .goog-te-combo option {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fixed z-[-2] top-[0%] w-full bg-[url(images/background-image.jpg)] bg-cover h-[100vh] blur-[5px] ]">
+
+    </div>
+    <div
+        class="bg-[rgb(0,0,0,0.5)]  bg-[linear-gradient(0deg,_rgba(0,0,0,0.8596230728619573)_5%,_rgba(73,9,55,0.5599031849067753)_74%,_rgba(0,0,0,0.6439367983521533)_98%)]  w-full h-[100%] fixed z-[-1] top-[0%]">
+    </div>
+    <header>
+        <div class="max-w-[1460px] mx-auto   justify-between flex text-white items-center">
+            <div class="left"><img src="images/logo.png"></div>
+            <div class="right">
+
+                <button id="google_translator"></button>
+                <button class="btn1">Sign in</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-[1400px] h-[400px] my-[10px] mx-auto flex   justify-center  text-white   ">
+
+
+        <div class=" w-[100%]  ">
+
+
+            
+            <section class="slider max-w-[1200px] shadow-lg mx-auto">
+                <div class="swiper-container mySwiper slider1 overflow-hidden w-[95%] md:w-[100%] mx-auto">
+                    <div class="swiper-wrapper rounded-[30px]">
+                        <div class="swiper-slide rounded-[30px]">
+                            <img src="images/IN-en-20250331-TRIFECTA-perspective_ed11f76a-3e10-41ea-a60d-9008d2b6c103_large.jpg"
+                                class="rounded-[30px] relative aspect-[16/9]" />
+                            <div class="w-full h-[100%] bg-[rgb(0,0,0,0.7)] absolute top-[0%] left-[0%]"></div>
+                            <div
+                                class="absolute top-[7%] md:top-[13%] lg:top-[20%] left-[10%] text-[white] w-[80%] p-[10px] md:p-[0px] md:w-[70%] lg-w-[60%] text-center md:text-left">
+                                <h1 class="text-[16px] font-extrabold md:text-[40px] lg:text-[55px]">Unlimited Movies,Tv shows
+                                    and more</h1>
+                                <h4 class="text-[14px] py-[3px] md:py-[15px] md:text-[25px] lg:text-[32px]">Starts at
+                                    $149.Cancel at any time.</h4>
+                                <p class="mt-[5px] md:mt-[10px] lg:mt-[20px] text-[11px] md:text-[16px] lg:text-[18px]">Ready to
+                                    watch? Enter your email to create or restart your membership</p>
+                                <div class="get mt-[5px] md:mt-[10px] lg:mt-[20px] flex flex-wrap ">
+                                    <input type="email" placeholder="Enter your email"
+                                        class=" bg-[#464444] table capitalize p-[4px_10px] rounded-[30px] w-[100%] md:w-[40%]">
+                                    <button
+                                        class="bg-[#E50914] p-[4px_10px] mt-[5px] ms-[0px] md:ms-[10px] text-[14px] md:text-[22px] font-bold rounded-[35px]  w-[100%] md:w-[40%]">Get
+                                        Started > </button>
+                                </div>
+                            </div>
+        
+        
+                        </div>
+                        <div class="swiper-slide rounded-[30px]">
+                            <img src="images/AAAABR8niw0wZTJPpga-acArk39nlaHokpy6AUakAKnkUwWnWfNHVYE_tsqN1ItLYXxPMUelSXtVEo0bGCygw1v8olgzJpaFeFwXvy1-XoRMvOUN9kzIbaMDCE16Yg.webp"
+                                class="rounded-[30px] relative bg-cover aspect-[16/9]" />
+                            <div class="w-full h-[100%] bg-[rgb(0,0,0,0.7)] absolute top-[0%] left-[0%]"></div>
+                            <div
+                                class="absolute top-[7%] md:top-[13%] lg:top-[20%] left-[10%] text-[white] w-[80%] p-[10px] md:p-[0px] md:w-[70%] lg-w-[60%] text-center md:text-left">
+                                <h1 class="text-[16px] font-extrabold md:text-[40px] lg:text-[55px]">Unlimited Movies,Tv shows
+                                    and more</h1>
+                                <h4 class="text-[14px] py-[3px] md:py-[15px] md:text-[25px] lg:text-[32px]">Starts at
+                                    $149.Cancel at any time.</h4>
+                                <p class="mt-[5px] md:mt-[10px] lg:mt-[20px] text-[11px] md:text-[16px] lg:text-[18px]">Ready to
+                                    watch? Enter your email to create or restart your membership</p>
+                                <div class="get mt-[5px] md:mt-[10px] lg:mt-[20px] flex flex-wrap ">
+                                    <input type="email" placeholder="Enter your email"
+                                        class=" bg-[#464444] table capitalize p-[4px_10px] rounded-[30px] w-[100%] md:w-[40%]">
+                                    <button
+                                        class="bg-[#E50914] p-[4px_10px] mt-[5px] ms-[0px] md:ms-[10px] text-[14px] md:text-[22px] font-bold rounded-[35px]  w-[100%] md:w-[40%]">Get
+                                        Started > </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide rounded-[30px]">
+                            <img src="images/AAAABRcxzMjjPzY7wD0MthmmU0zXeHGbBLTz30KKeloKxaB_ehfY78iBwEek9nfyAeGw_1-UbvretHtFwKujIPuzwvoF5wrEiSiK34Zh4qoIAsoVYbPTsXm3eQsKlg.webp"
+                                class="rounded-[30px] relative aspect-[16/9]" />
+                            <div class="w-full h-[100%] bg-[rgb(0,0,0,0.7)] absolute top-[0%] left-[0%]"></div>
+                            <div
+                                class="absolute top-[7%] md:top-[13%] lg:top-[20%] left-[10%] text-[white] w-[80%] p-[10px] md:p-[0px] md:w-[70%] lg-w-[60%] text-center md:text-left">
+                                <h1 class="text-[16px] font-extrabold md:text-[40px] lg:text-[55px]">Unlimited Movies,Tv shows
+                                    and more</h1>
+                                <h4 class="text-[14px] py-[3px] md:py-[15px] md:text-[25px] lg:text-[32px]">Starts at
+                                    $149.Cancel at any time.</h4>
+                                <p class="mt-[5px] md:mt-[10px] lg:mt-[20px] text-[11px] md:text-[16px] lg:text-[18px]">Ready to
+                                    watch? Enter your email to create or restart your membership</p>
+                                <div class="get mt-[5px] md:mt-[10px] lg:mt-[20px] flex flex-wrap ">
+                                    <input type="email" placeholder="Enter your email"
+                                        class=" bg-[#464444] table capitalize p-[4px_10px] rounded-[30px] w-[100%] md:w-[40%]">
+                                    <button
+                                        class="bg-[#E50914] p-[4px_10px] mt-[5px] ms-[0px] md:ms-[10px] text-[14px] md:text-[22px] font-bold rounded-[35px]  w-[100%] md:w-[40%]">Get
+                                        Started > </button>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </section>
+
+        
+
+
+            <section class="w-full   ">
+                <section class="max-w-[1200px] mt-[10px] mx-auto flex flex-col py-[20px]">
+
+                    <div class="main w-[85%] mx-auto">
+                        <div class="text-[38px] capitalize text-[#D5C7CB] font-semibold "> trending now</div>
+                        <div class="swiper mySwiper swiper-10 w-full ">
+                            <div class="swiper-wrapper h-[300px]">
+                                <div class="swiper-slide"><img src="images/one.webp" alt=""
+                                        class="h-[300px] rounded-[20px] w-[100%] border-[3px] border-[transparent] hover:border-[3px] hover:border-[white] relative">
+                                    <p
+                                        class="absolute top-[-8%] left-[-6%] text-[38px] text-[white] p-[10px_5px] stroke-[white] stroke-[3px] text-shadow-[2px_0px_6px_black]">
+                                        1</p>
+                                </div>
+                                <div class="swiper-slide"><img src="images/two.webp" alt=""
+                                        class="h-[300px] rounded-[20px] w-[100%] border-[3px] border-[transparent] hover:border-[3px] hover:border-[white] relative">
+                                    <p
+                                        class="absolute top-[-8%] left-[-6%] text-[38px] text-[white] p-[10px_5px] stroke-[white] stroke-[3px] text-shadow-[2px_0px_6px_black]">
+                                        2</p>
+                                </div>
+                                <div class="swiper-slide"><img src="images/three.webp" alt=""
+                                        class="h-[300px] rounded-[20px] w-[100%] border-[3px] border-[transparent] hover:border-[3px] hover:border-[white] relative">
+                                    <p
+                                        class="absolute top-[-8%] left-[-6%] text-[38px] text-[white] p-[10px_5px] stroke-[white] stroke-[3px] text-shadow-[2px_0px_6px_black]">
+                                        3</p>
+                                </div>
+                                <div class="swiper-slide"><img src="images/four.webp" alt=""
+                                        class="h-[300px] rounded-[20px] w-[100%] border-[3px] border-[transparent] hover:border-[3px] hover:border-[white] relative">
+                                    <p
+                                        class="absolute top-[-8%] left-[-6%] text-[38px] text-[white] p-[10px_5px] stroke-[white] stroke-[3px] text-shadow-[2px_0px_6px_black]">
+                                        4</p>
+                                </div>
+                                <div class="swiper-slide"><img src="images/five.webp" alt=""
+                                        class="h-[300px] rounded-[20px] w-[100%] border-[3px] border-[transparent] hover:border-[3px] hover:border-[white] relative">
+                                    <p
+                                        class="absolute top-[-8%] left-[-6%] text-[38px] text-[white] p-[10px_5px] stroke-[white] stroke-[3px] text-shadow-[2px_0px_6px_black]">
+                                        5</p>
+                                </div>
+                                <div class="swiper-slide"><img src="images/six.webp" alt=""
+                                        class="h-[300px] rounded-[20px] w-[100%] border-[3px] border-[transparent] hover:border-[3px] hover:border-[white] relative">
+                                    <p
+                                        class="absolute top-[-8%] left-[-6%] text-[38px] text-[white] p-[10px_5px] stroke-[white] stroke-[3px] text-shadow-[2px_0px_6px_black]">
+                                        6</p>
+                                </div>
+                                <div class="swiper-slide"><img src="images/seven.webp" alt=""
+                                        class="h-[300px] rounded-[20px] w-[100%] border-[3px] border-[transparent] hover:border-[3px] hover:border-[white] relative">
+                                    <p
+                                        class="absolute top-[-8%] left-[-6%] text-[38px] text-[white] p-[10px_5px] stroke-[white] stroke-[3px] text-shadow-[2px_0px_6px_black]">
+                                        7</p>
+                                </div>
+                                <div class="swiper-slide"><img src="images/eight.webp" alt=""
+                                        class="h-[300px] rounded-[20px] w-[100%] border-[3px] border-[transparent] hover:border-[3px] hover:border-[white] relative">
+                                    <p
+                                        class="absolute top-[-8%] left-[-6%] text-[38px] text-[white] p-[10px_5px] stroke-[white] stroke-[3px] text-shadow-[2px_0px_6px_black]">
+                                        8</p>
+                                </div>
+                                <div class="swiper-slide"><img src="images/nine.webp" alt=""
+                                        class="h-[300px] rounded-[20px] w-[100%] border-[3px] border-[transparent] hover:border-[3px] hover:border-[white] relative">
+                                    <p
+                                        class="absolute top-[-8%] left-[-6%] text-[38px] text-[white] p-[10px_5px] stroke-[white] stroke-[3px] text-shadow-[2px_0px_6px_black]">
+                                        9</p>
+                                </div>
+                                <div class="swiper-slide"><img src="images/ten.webp" alt=""
+                                        class="h-[300px] rounded-[20px] w-[100%] border-[3px] border-[transparent] hover:border-[3px] hover:border-[white] relative">
+                                    <p
+                                        class="absolute top-[-8%] left-[-6%] text-[38px] text-[white] p-[10px_5px] stroke-[white] stroke-[3px] text-shadow-[2px_0px_6px_black]">
+                                        10</p>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+
+
+            <div class="max-w-[1200px] m-auto text-white">
+                <h1 class="text-[32px] text-white font-bold text-center">More reason to Join</h1>
+                <div class="justify-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[25px] my-[10px]">
+                    <div class=" h-[200px] w-[300px] px-[15px] rounded-[10px] bg-[rgb(40,40,40)] m-auto">
+                        <h2 class="text-[20px] my-[10px] font-bold">Enjoy on your Tv</h2>
+                        <p>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
+                        <img src="" alt="">
+                    </div>
+
+                    <div class=" h-[200px] w-[300px] px-[15px] rounded-[10px] bg-[rgb(40,40,40)] m-auto">
+                        <h2 class="text-[20px] my-[10px] font-bold">Enjoy on your Tv</h2>
+                        <p>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
+                        <img src="" alt="">
+                    </div>
+
+                    <div class=" h-[200px] w-[300px] px-[15px] rounded-[10px] bg-[rgb(40,40,40)] m-auto">
+                        <h2 class="text-[20px] my-[10px] font-bold">Enjoy on your Tv</h2>
+                        <p>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
+                        <img src="" alt="">
+                    </div>
+
+                    <div class=" h-[200px] w-[300px] px-[15px] rounded-[10px] bg-[rgb(40,40,40)] m-auto">
+                        <h2 class="text-[20px] my-[10px] font-bold">Enjoy on your Tv</h2>
+                        <p>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="max-w-[1200px] mx-auto text-white">
+                <h1 class="text-[32px] text-white font-bold">Frequently Asked Questions</h1>
+                <div class="total">
+                    <div class="box bg-[rgb(40,40,40)] rounded-[10px] hover:bg-[rgba(39,39,39,0.8)]">
+                        <h2>1. What is Netflix?<i class="fa-solid fa-plus"></i></h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ratione voluptatum ab atque
+                            libero assumenda eius minus, neque magni porro placeat? Repellat aperiam soluta et, nemo
+                            quisquam non adipisci eos?</p>
+                    </div>
+
+                    <div class="box bg-[rgb(40,40,40)] rounded-[10px] hover:bg-[rgba(39,39,39,0.8)]">
+                        <h2>2.How much does Netflix cost?<i class="fa-solid fa-plus"></i></h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ratione voluptatum ab atque
+                            libero assumenda eius minus, neque magni porro placeat? Repellat aperiam soluta et, nemo
+                            quisquam non adipisci eos?</p>
+                    </div>
+                    <div class="box bg-[rgb(40,40,40)] rounded-[10px] hover:bg-[rgba(39,39,39,0.8)]">
+                        <h2>3.How can I watch a Netflix.<i class="fa-solid fa-plus"></i></h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ratione voluptatum ab atque
+                            libero assumenda eius minus, neque magni porro placeat? Repellat aperiam soluta et, nemo
+                            quisquam non adipisci eos?</p>
+                    </div>
+                    <div class="box bg-[rgb(40,40,40)] rounded-[10px] hover:bg-[rgba(39,39,39,0.8)]">
+                        <h2>4.Where can i Watch?<i class="fa-solid fa-plus"></i></h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ratione voluptatum ab atque
+                            libero assumenda eius minus, neque magni porro placeat? Repellat aperiam soluta et, nemo
+                            quisquam non adipisci eos?</p>
+                    </div>
+                    <div class="box bg-[rgb(40,40,40)] rounded-[10px] hover:bg-[rgba(39,39,39,0.8)]">
+                        <h2>5.How do I cancel?<i class="fa-solid fa-plus"></i></h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ratione voluptatum ab atque
+                            libero assumenda eius minus, neque magni porro placeat? Repellat aperiam soluta et, nemo
+                            quisquam non adipisci eos?</p>
+                    </div>
+                    <div class="box bg-[rgb(39,39,39)] rounded-[10px] hover:bg-[rgba(39,39,39,0.8)]">
+                        <h2>6.Is Netflix goods for kids?<i class="fa-solid fa-plus"></i></h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ratione voluptatum ab atque
+                            libero assumenda eius minus, neque magni porro placeat? Repellat aperiam soluta et, nemo
+                            quisquam non adipisci eos?</p>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="max-w-[1400px] mx-auto my-[70px] text-white">
+                <div class="text-center">
+                    <p>Ready to watch? Enter your email to create or restart your membership</p>
+                    <div class="Lastget">
+                        <input type="email" placeholder="Enter your email">
+                        <button>Get Started > </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <footer class="bg-[rgb(15,15,15)] p-[10px]">
+                <div class="max-w-[1400px] mx-auto my-[70px] text-white ">
+                    <p>Question? Call 000-800-919-1743</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[10px] my-[20px] ">
+                        <div>
+                            <ul>
+                                <li>FAQ</li>
+                                <li>Investor Relation</li>
+                                <li>Privacy</li>
+                                <li>Speed Test</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <ul>
+                                <li>Help Center</li>
+                                <li>Job</li>
+                                <li>Cookie Preference</li>
+                                <li>Legal Notice</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <ul>
+                                <li>Account</li>
+                                <li>Ways to Watch</li>
+                                <li>Corporate Watch</li>
+                                <li>Only on Netflix</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <ul>
+                                <li>Media Center</li>
+                                <li>Terms of Uses</li>
+                                <li>Contact us</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="max-w-[1400px] mx-auto my-[70px text-white">
+                    <select class="w-[150px] border p-[5px] rounded-[10px]">
+                        <option>English</option>
+                        <option>Hindi</option>
+                    </select>
+                    <p class="my-[20px]">Netflix India</p>
+                </div>
+            </footer>
+
+</body>
+<script>
+    let allbox = document.querySelectorAll(".box h2")
+
+    allbox.forEach((v, i) => {
+        v.addEventListener("click", () => {
+            v.nextElementSibling.classList.toggle("active")
+            v.children[0].classList.toggle("fa-plus")
+            v.children[0].classList.toggle("fa-minus")
+        })
+    })
+
+
+
+</script>
+
+<script type="text/javascript"
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+            { pageLanguage: 'en' },
+            'google_translator'
+        )
+    };
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    var swiper = new Swiper(".swiper-10", {
+        slidesPerView: 7,
+        spaceBetween: 10,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+
+        breakpoints: {
+            // when window width is <= 499px
+            0: {
+                slidesPerView: 2,
+                spaceBetweenSlides: 5,
+            },
+
+            500: {
+                slidesPerView: 3,
+                spaceBetweenSlides: 5,
+            },
+            // when window width is <= 999px
+            999: {
+                slidesPerView: 5,
+                spaceBetweenSlides: 10
+            },
+            1200: {
+                slidesPerView: 6,
+                spaceBetweenSlides: 10
+            }
+        }
+    });
+
+
+    var swiper = new Swiper(".slider1", {
+        spaceBetween: 30,
+        effect: "fade",
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+</script>
+
+</html>
