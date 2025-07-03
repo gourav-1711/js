@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  padding: 0;
+ 
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+.bg{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+     background: linear-gradient(135deg, #1f1c2c, #928dab);
+     z-index: -1;
+}
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 1px 1px 5px #000;
+}
+
+#game {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 15px;
+  margin: 20px auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.cell:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#status {
+  font-size: 1.4rem;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #fff;
+  border: none;
+  color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #eee;
+}
+
+.win {
+  background-color: #4caf50 !important;
+  animation: glow 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px #4caf50;
+  }
+  to {
+    box-shadow: 0 0 20px #4caf50, 0 0 30px #4caf50;
+  }
+}
+
+
+.draw {
+  background-color: #ff4d4d !important; /* red */
+  color: #fff;
+  animation: pulse 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    box-shadow: 0 0 5px #ff4d4d;
+  }
+  to {
+    box-shadow: 0 0 15px #ff4d4d;
+  }
+}
+
+@media (max-width: 400px){
+    #status{
+        margin-top: 10px 0px;
+    }
+}
