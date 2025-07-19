@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <div class="scoreboard">
+      <div>CPU: <span id="cpu-score">0</span></div>
+      <div>You: <span id="user-score">0</span></div>
+    </div>
+
+    <div class="player-section" id="cpu-section">
+      <h2>CPU</h2>
+      <div class="hand-row top">
+        <button class="hand cpu" data-move="rock"><span>🪨</span>Rock</button>
+        <button class="hand cpu" data-move="paper"><span>📄</span>Paper</button>
+        <button class="hand cpu" data-move="scissors"><span>✂️</span>Scissors</button>
+      </div>
+    </div>
+
+    <div class="vs">VS</div>
+
+    <div class="player-section" id="user-section">
+      <h2>You</h2>
+      <div class="hand-row bottom">
+        <button class="hand user" data-move="rock"><span>🪨</span>Rock</button>
+        <button class="hand user" data-move="paper"><span>📄</span>Paper</button>
+        <button class="hand user" data-move="scissors"><span>✂️</span>Scissors</button>
+      </div>
+    </div>
+
+    <button class="reset-btn">🔄 Reset</button>
+  </div>
+
+  <!-- Sounds -->
+  <audio id="move-sound" src="Mouse-Click-00-c-FesliyanStudios.com.mp3"></audio>
+ 
+
+  <script src="index.js"></script>
+</body>
+</html>
